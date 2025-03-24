@@ -1,0 +1,89 @@
+server:
+  port: 7000
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url.defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - Authorization
+              - Cache-Control
+              - Content-Type
+            exposedHeaders:
+              - Authorization
+            allowCredentials: true
+      routes:
+        - id: LOGIN
+          uri: lb://AUTH
+          predicates:
+            - Path=/login
+        - id: AUTH
+          uri: lb://AUTH
+          predicates:
+            - Path=/auths/**
+        - id: CLIENTS
+          uri: lb://AUTH
+          predicates:
+            - Path=/clients/**
+        - id: USER
+          uri: lb://USER
+          predicates:
+            - Path=/users/**
+        - id: LOGIN
+          uri: lb://AUTH
+          predicates:
+            - Path=/login
+        - id: PRODUCT
+          uri: lb://PRODUCT
+          predicates:
+            - Path=/products/**
+        - id: CATEGORY
+          uri: lb://PRODUCT
+          predicates:
+            - Path=/categories/**
+        - id: UPLOADS
+          uri: lb://PRODUCT
+          predicates:
+            - Path=/uploads/**
+        - id: ORDER
+          uri: lb://ORDER
+          predicates:
+            - Path=/orders/**
+        - id: ORDER-ITEM
+          uri: lb://ORDER
+          predicates:
+            - Path=/items/**
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/certs
+
+  main:
+    web-application-type: reactive
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+#    org.springframework: DEBUG
+#    org.springframework.security: DEBUG

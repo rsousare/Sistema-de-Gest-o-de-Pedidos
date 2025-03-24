@@ -1,0 +1,25 @@
+server:
+  port: 8100
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url.defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: USER
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user?useTimeZone=true&serverTimezone=UTC
+    username: root
+    password: 123
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
