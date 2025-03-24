@@ -1,0 +1,42 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="clientForm" (ngSubmit)="create()" class="form">
+    <h1 class="fullwidth">Client Register</h1>
+    <img src="assets/img/register.jpg" alt="Register">
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="user">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput placeholder="user@sapo.pt">
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput placeholder="123#aS">
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Access Code (Admin only)</mat-label>
+      <input formControlName="accessCode"
+      matInput
+      placeholder="Access Code"
+      (input)="validateAccessCode()">
+      <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+
+    <mat-slide-toggle [checked]="isAdmin" [disabled]="!isCodeValid">
+
+    </mat-slide-toggle>
+
+    <button type="submit" [disabled]="!validFields()" class="fullwidth mat-elevation-z2" mat-raised-button>Register</button>
+    <button routerLink="../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

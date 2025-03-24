@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <div *ngFor="let tempProduct of paginatedProducts || []" class="col-md-2">
+          <div class="product-box">
+            <h1>{{ tempProduct.name }}</h1>
+            <p>{{ tempProduct.description }}</p>
+            <p>Stock: {{ tempProduct.stock }}</p>
+            <div class="price">{{ tempProduct.price | currency : "EUR" }}</div>
+            <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="products && products?.length == 0" class="products-container" role="alert">
+        <div class="products-message">
+          No Products Found!
+        </div>
+      </div>
+
+      <div class="footer-pagination fixed-paginator">
+        <mat-paginator
+          [length]="theTotalElements"
+          [pageSize]="5"
+          [pageSizeOptions]="[5]"
+          (page)="onPageChange($event)">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+  <div class="return-button">
+    <button routerLink="/productCategoryMenu" class="fullwidth" mat-stroked-button>Return</button>
+  </div>
+
+</div>

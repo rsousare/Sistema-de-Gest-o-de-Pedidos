@@ -1,0 +1,37 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="orderForm" (ngSubmit)="delete()" class="form">
+    <h1 class="fullwidth">Delete Order</h1>
+    <img class="fullwidth" src="assets/img/delete.jpg" alt="Delete">
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Status</mat-label>
+      <input formControlName="status" matInput>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Total Price</mat-label>
+      <input formControlName="totalPrice" matInput>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Created</mat-label>
+      <input formControlName="created" matInput>
+      <mat-icon matSuffix>edit_calendar</mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Client</mat-label>
+      <input formControlName="clientId" matInput>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <button type="submit" class="fullwidth mat-elevation-z2" mat-raised-button>Delete</button>
+    <button routerLink="../../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

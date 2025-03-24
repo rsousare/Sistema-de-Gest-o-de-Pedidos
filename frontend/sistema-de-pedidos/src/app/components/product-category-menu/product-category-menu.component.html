@@ -1,0 +1,21 @@
+
+<div class="card-container">
+  <app-categories-card
+    *ngFor="let card of getPaginatedCards()"
+    [category]="card">
+  </app-categories-card>
+</div>
+
+<div class="paginator">
+  <button mat-stroked-button
+  *ngIf="currentPage > 0"
+  (click)="onPageChange(currentPage - 1)">
+  < Previous
+  </button>
+  <button mat-stroked-button
+  *ngIf="(currentPage + 1) * pageSize < categories.length"
+  (click)="onPageChange(currentPage + 1)">
+  Next >
+  </button>
+</div>
+

@@ -1,0 +1,37 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="clientForm" (ngSubmit)="create()" class="form">
+    <h1 class="fullwidth">User Register</h1>
+    <img src="assets/img/userRegister.jpg" alt="Register">
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Address</mat-label>
+      <input formControlName="address" matInput placeholder="street">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input formControlName="phone" matInput placeholder="911111111" appPhoneMask>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%;" appearance="outline">
+      <mat-label>Birthdate</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthdate" placeholder="dd-mm-yyyy">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Client</mat-label>
+      <input formControlName="clientId" matInput placeholder="Client Id">
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!validFields()" class="fullwidth mat-elevation-z2" mat-raised-button>Register</button>
+    <button routerLink="../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

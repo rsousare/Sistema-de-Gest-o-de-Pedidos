@@ -1,0 +1,37 @@
+.container {
+  width: 35rem;
+  margin: auto;
+  padding: 1rem 1rem 3rem 1rem;
+  border-radius: .6rem;
+  background: linear-gradient(135deg, #e0f7fa, #aebabc);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  display: flex;
+  width: 50%;
+  height: 8rem;
+  margin: 1rem auto;
+}
+
+.section {
+  margin: 1rem 5rem 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin-top: .5rem;
+}
+
+mat-icon {
+  opacity: .8;
+}

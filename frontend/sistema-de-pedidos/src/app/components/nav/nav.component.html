@@ -1,0 +1,71 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+  <img src="assets/img/side-image.avif" alt="Navigation Image">
+
+    <mat-nav-list class="nav-list">
+
+      <a mat-list-item routerLink="home">
+        <i class="material-icons">home</i>
+        Home
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="client">
+        <i class="material-icons">account_circle</i>
+        Client
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="user">
+        <i class="material-icons">person</i>
+        Personal Data
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="product">
+        <i class="material-icons">local_shipping</i>
+        Products
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="order">
+        <i class="material-icons">list_alt</i>
+        Order
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="item">
+        <i class="material-icons">production_quantity_limits</i>
+        Items
+      </a>
+
+      <a *ngIf="isAdmin" mat-list-item routerLink="category">
+        <i class="material-icons">category</i>
+        Category
+      </a>
+
+      <a *ngIf="isUser" mat-list-item routerLink="productCategoryMenu">
+        <i class="material-icons">shopping_cart</i>
+        Categories
+      </a>
+
+      <a mat-list-item (click)="logout()">
+        <i class="material-icons">logout</i>
+        Logout
+      </a>
+
+
+    </mat-nav-list>
+
+    <div class="sidenav-footer">
+      <div class="small">Logged User:</div>
+      {{logged}}
+    </div>
+
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <app-header></app-header>
+    <button class="menu" mat-elevation-z8 (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+
+
+</mat-drawer-container>

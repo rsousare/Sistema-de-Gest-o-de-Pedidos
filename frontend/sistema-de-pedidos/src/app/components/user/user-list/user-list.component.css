@@ -1,0 +1,49 @@
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.filter {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-bottom: 2rem;
+  height: 3rem;
+  background: rgb(62, 159, 29);
+  color: #ffea00;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+  box-shadow: 0 0 15px #00ffcc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #00ffcc;
+  color: black;
+  text-shadow: none;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  color: chartreuse;
+  font-size: 30px;
+}
+
+.edit {
+  color: coral;
+}
+
+.delete {
+  color: rgb(148, 11, 11);
+}

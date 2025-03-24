@@ -1,0 +1,37 @@
+.container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 13rem;
+  color: white;
+  background: linear-gradient(283deg, rgba(25,36,0,1) 0%, rgba(64,70,34,0.31649156244529064) 0%, rgba(255,176,0,1) 100%);
+}
+
+img {
+  width: 100%;
+  height: 10rem;
+  margin: .8rem auto 1rem auto;
+}
+
+.sidenav a {
+  color: white;
+}
+
+.sidenav i {
+  margin-right: .6rem;
+}
+
+.menu {
+  margin: 1rem 0 0 1rem;
+  color: white;
+  background: linear-gradient(283deg, rgba(25,36,0,1) 0%, rgba(64,70,34,0.31649156244529064) 0%, rgba(255,176,0,1) 100%);
+}
+
+.sidenav-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: darkslategrey;
+}

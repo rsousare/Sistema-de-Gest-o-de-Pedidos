@@ -1,0 +1,35 @@
+.cart-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  margin-right: 10px;
+}
+
+.cart-quantity {
+  font-size: 0.9rem;
+  color: #222121;
+  font-weight: bold;
+  background-color: #faf4f4;
+  padding: 2px;
+  display: inline-block;
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.cart-area a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.icon-left {
+  margin-left: 10px;
+}

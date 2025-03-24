@@ -1,0 +1,33 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="clientForm" (ngSubmit)="update()" class="form">
+    <h1 class="fullwidth">Update Customer</h1>
+    <img class="fullwidth" src="assets/img/tecnico-create.svg" alt="Register">
+
+    <section class="section">
+      <mat-checkbox (click)="addPerfil(0)" class="margin">Admin</mat-checkbox>
+      <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin">Client</mat-checkbox>
+    </section>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="user">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput placeholder="user@sapo.pt">
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput placeholder="123#aS">
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!validFields()" class="fullwidth mat-elevation-z2" mat-raised-button>Update</button>
+    <button routerLink="../../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

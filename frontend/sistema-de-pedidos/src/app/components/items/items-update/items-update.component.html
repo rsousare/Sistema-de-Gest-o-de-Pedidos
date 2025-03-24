@@ -1,0 +1,18 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="itemForm" (ngSubmit)="update()" class="form">
+    <h1 class="fullwidth">Order Item Update</h1>
+    <img src="assets/img/itemsRegister.avif" alt="Update">
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Quantity</mat-label>
+      <input formControlName="quantity" matInput placeholder="qt">
+      <mat-icon matSuffix>filter_8</mat-icon>
+    </mat-form-field>
+
+
+    <button type="submit" [disabled]="!validFields()" class="fullwidth mat-elevation-z2" mat-raised-button>Update</button>
+    <button routerLink="../../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

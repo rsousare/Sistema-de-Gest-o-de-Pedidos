@@ -1,0 +1,24 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="categoryForm" (ngSubmit)="create()" class="form">
+    <h1 class="fullwidth">Category Register</h1>
+    <img src="assets/img/categoryRegister.avif" alt="Register">
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Category Name</mat-label>
+      <input formControlName="categoryName" matInput placeholder="name">
+      <mat-icon matSuffix>dns</mat-icon>
+    </mat-form-field>
+
+    <div>
+      <label for="iconImage">Icon Image:</label>
+      <input class="icon" type="file" id="iconImage" (change)="onFileSelected($event)" />
+    </div>
+
+
+
+    <button type="submit" [disabled]="!validFields()" class="fullwidth mat-elevation-z2" mat-raised-button>Register</button>
+    <button routerLink="../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

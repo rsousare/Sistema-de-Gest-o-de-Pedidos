@@ -1,0 +1,38 @@
+.container {
+  width: 35rem;
+  background: linear-gradient(283deg, rgba(146, 216, 32, 0.316) 0%, rgba(0,176,255,0.4901610302324054) 50%);
+  margin: auto;
+  padding: 1rem 1rem 3rem 1rem;
+  border-radius: .6rem;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  display: flex;
+
+}
+
+.section {
+  margin: 1rem 5rem 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin-top: .5rem;
+}
+
+mat-icon {
+  opacity: .8;
+}

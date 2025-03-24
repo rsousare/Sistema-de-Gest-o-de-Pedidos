@@ -1,0 +1,24 @@
+
+<header class="header-desktop">
+  <div class="section-content section-content-p30">
+    <ng-container *ngIf="isAdmin">
+
+        <h1 class="mat-elevation-z2 title"
+        [ngStyle]="{ 'background-image': 'url(' + imagePath + ')' }">
+          Management
+        </h1>
+    </ng-container>
+
+    <ng-container *ngIf="isUser">
+      <h1 class="mat-elevation-z2 title"
+        [ngStyle]="{ 'background-image': 'url(' + imagePath + ')' }">
+          Shopping
+        </h1>
+
+        <div class="cart-status">
+          <app-cart-status></app-cart-status>
+        </div>
+      </ng-container>
+  </div>
+</header>
+

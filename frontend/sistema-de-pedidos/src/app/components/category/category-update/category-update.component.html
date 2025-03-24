@@ -1,0 +1,24 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="categoryForm" (ngSubmit)="update()" class="form">
+    <h1 class="fullwidth">Category Update</h1>
+    <img src="assets/img/categoryRegister.avif" alt="Update">
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Category Name</mat-label>
+      <input formControlName="categoryName" matInput placeholder="name">
+      <mat-icon matSuffix>dns</mat-icon>
+    </mat-form-field>
+
+    <div>
+      <label for="iconImage">Icon Image:</label>
+      <p class="icon">{{existingFilePath}}</p>
+      <input class="iconChose" type="file" id="iconImage" (change)="onFileSelected($event)" />
+    </div>
+
+
+    <button type="submit" [disabled]="!validFields()" class="fullwidth mat-elevation-z2" mat-raised-button>Update</button>
+    <button routerLink="../../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

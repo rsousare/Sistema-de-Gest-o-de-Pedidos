@@ -1,0 +1,83 @@
+
+.main-container {
+  width: 90%;
+  margin-left: 50px;
+  padding: 20px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-remove {
+  margin-left: 24px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.checkout {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.checkout button {
+  font-size: 1rem;
+}
+
+.alert-warning {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #d32f2f;
+}
+
+.mat-column-name {
+  width: 200px;
+  height: 60px;
+  border-right: 1px solid currentColor;
+  text-align: center;
+  line-height: 50px;
+}
+
+.mat-header-row{
+  background-color: #d32f2f !important;
+}
+
+.mat-column-description {
+  width: 600px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.mat-column-controls {
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.mat-column-subtotal {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.mat-mini-fab {
+  width: 300px;
+  height: 30px;
+}
+
+.mat-mdc-header-cell.mat-column-name, .mat-mdc-header-cell.mat-column-description,
+.mat-mdc-header-cell.mat-column-controls, .mat-mdc-header-cell.mat-column-subtotal{
+  background-color: #a2a29e;
+}
+
+.mdc-fab  {
+  width: 2rem;
+  background-color: #d8e2e0;
+}
+

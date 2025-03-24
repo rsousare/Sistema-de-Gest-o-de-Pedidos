@@ -1,0 +1,42 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="productForm" (ngSubmit)="delete()" class="form">
+    <h1 class="fullwidth">Product Delete</h1>
+    <img class="fullwidth" src="assets/img/delete.jpg" alt="Delete">
+
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="name">
+      <mat-icon matSuffix>dns</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" matInput placeholder="description">
+      <mat-icon matSuffix>qr_code</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Price</mat-label>
+      <input formControlName="price" matInput placeholder="0$">
+      <mat-icon matSuffix>euro</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Stock</mat-label>
+      <input formControlName="stock" matInput placeholder="stock">
+      <mat-icon matSuffix>inventory_2</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="outline">
+      <mat-label>Category</mat-label>
+      <input formControlName="categoryId" matInput placeholder="category">
+      <mat-icon matSuffix>category</mat-icon>
+    </mat-form-field>
+
+
+    <button type="submit" class="fullwidth mat-elevation-z2" mat-raised-button>Delete</button>
+    <button routerLink="../../" class="fullwidth" mat-stroked-button>Cancel</button>
+
+  </form>
+</div>

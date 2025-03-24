@@ -1,0 +1,82 @@
+<div class="container">
+
+  <h1>New Order</h1>
+
+  <button routerLink="create" class="mat-elevation-z1">
+    <span class="material-icons">playlist_add</span> New Order
+  </button>
+
+  <mat-form-field class="filter">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Total Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalPrice}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="created">
+        <th mat-header-cell *matHeaderCellDef> Created </th>
+        <td mat-cell *matCellDef="let element"> {{element.created}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="client">
+        <th mat-header-cell *matHeaderCellDef> Client Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.clientId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <!-- <a routerLink="update/{{element.id}}">
+            <i class="material-icons edit">edit</i>
+          </a> -->
+          <a routerLink="delete/{{element.id}}">
+            <i class="material-icons delete">delete</i>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[2, 5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>
+
+<div class="updateStatus">
+  <h6>Update Status
+  <mat-form-field class="stock" appearance="outline">
+    <mat-label>Order Id</mat-label>
+    <input matInput [(ngModel)]="updateOrderId" placeholder="Enter order id">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="newStatus">
+      <mat-option *ngFor="let status of StatusEnum" [value]="status">
+        {{status | titlecase}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button class="btn" mat-raised-button color="primary" [disabled]="!validFields()" (click)="updateStatus(updateOrderId, newStatus)">Update</button>
+  </h6>
+</div>
